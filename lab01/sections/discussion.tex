@@ -1,13 +1,1 @@
 \section{Discussion}\label{sec:discussion}
-
-\subsection{Voltage controlled voltage source}\label{sec:vcvs}
-The output of an op amp may be modeled as an internal voltage source $V_{int}$ and series resistor $R_{int}$.
-When the circuit is open the output voltage is given by \eqref{eq:unloaded_oa} and by \eqref{eq:loaded_oa} when it is loaded.
-\begin{align}
-V_o &= V_{int} \label{eq:unloaded_oa} \\
-V_o &= \frac{R_L}{R_{int} + R_L}V_{int} \label{eq:loaded_oa}
-\end{align}
-Combining \eqref{eq:unloaded_oa} and \eqref{eq:loaded_oa} gives the internal resistance of the op amp as:
-\begin{align}
-R_{int} = R_L \left( \frac{V_{int}}{V_o} - 1 \right)
-\end{align}
