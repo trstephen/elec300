@@ -76,12 +76,13 @@
 %% --------------------------
 \usepackage{
 	enumitem,			% better control of enumerations, descriptions, etc
+	pdfpages,			% include external pdfs
 }
 
 %% References
 %% --------------------------
 \usepackage[backend=biber,style=ieee]{biblatex}
-\addbibresource{ELEC300_Lab_template.bib}
+\addbibresource{ELEC300_Lab_01.bib}
 
 %----------------------------------------------------------------------------
 %		     MACROS AND COMMANDS
@@ -102,7 +103,7 @@
 
 \begin{document}
 
-\input{sections/titlepage}
+\includepdf{cover-page}
 
 \doublespacing
 \input{sections/objective}
