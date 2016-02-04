@@ -1,10 +1,16 @@
+# Latex compiled output
 *.aux
 *.bbl
+*.bcf
 *.blg
 *.bcf
+*.fdb_latexmk
+*.fls
 *.gz
 *.log
 *.out
 *.xml
+
+# Private files
 prelab*
 _*
