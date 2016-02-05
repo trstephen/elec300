@@ -1,18 +1,19 @@
 \section{Results}\label{sec:results}
 \subsection{Voltage controlled voltage source (VCVS)}\label{sec:vcvs}
-
 \begin{figure}[tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{graphics/vcvs-schematic}
-	\caption{Schematic for VCVS with $G = 2$}
+	\caption{Schematic for VCVS with $K = 2$}
 	\label{fig:vcvs-schematic}
 \end{figure}
+
+The voltage controlled voltage source acted as a linear function of the input voltage, with a slope of 2, until the input voltage, $V_i$ was less than -4.2\si{\volt} and greater than 4.5\si{\volt}. Our calculated value of 2 for K (the gain) agrees with the results we observed.
 
 \begin{table}[htpb]
 	\centering
 	\begin{tabular}{@{}SS@{}}
 		\toprule
-		\textcol{$V_i$ (V)} & \textcol{$V_o$ (V)} \\ \midrule
+		\textcol{$V_i$ (\si{\volt})} & \textcol{$V_o$ (\si{\volt})} \\ \midrule
 		-6 & -8.467 \\
 		-5 & -8.468 \\
 		-4 & -8.007 \\
@@ -31,27 +32,33 @@
 	\label{table:vcvs}
 \end{table}
 
-\begin{figure}[tbph]
+\begin{figure}
 	\centering
-	\includegraphics[width=0.95\linewidth]{graphics/vcvs-graph}
+	\includegraphics[width=0.7\linewidth]{graphics/vcvs-graph}
 	\caption{Response characteristic of VCVS with expected linear behavior}
 	\label{fig:vcvs-graph}
 \end{figure}
 
-\subsection{Voltage controlled current source (VCCS)}\label{sec:vccs}
+When we attempted to estimate the internal resistance using a 150\si{\ohm} load ($R_L$ in Fig.~\ref{fig:vcvs-schematic}, we were only receiving a drop in voltage of approximately 6\si{\micro\volt} (peak-to-peak), which implied an internal resistance of approximately 500\si{\micro\ohm}: this was considered to be incorrect. Replacing the 150\si{\ohm} load with a 47\si{\ohm} load, we experienced a more plausible result. With a load of 47\si{\ohm}, the voltage across the load was measured to be 788.5\si{\milli\volt}, which means the source has an estimated internal resistance of approximately 39.1\si{\ohm}.
 
+
+\subsection{Voltage controlled current source (VCCS)}\label{sec:vccs}
 \begin{figure}[tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{graphics/vccs-schematic}
-	\caption{Schematic for VCCS with $G = 1$}
+	\caption{Schematic for VCCS with $G = \frac{1}{1000}$}
 	\label{fig:vccs-schematic}
 \end{figure}
+
+\large{\textbf{Compare to inequality}}
+
+\large{\textbf{Did we measure the short-circuit current?}}
 
 \begin{table}[htpb]
 	\centering
 	\begin{tabular}{@{}SS@{}}
 		\toprule
-		\textcol{$V_i$ (V)} & \textcol{$I_o$ (mA)} \\ \midrule
+		\textcol{$V_i$ (\si{\volt})} & \textcol{$I_o$ (\si{\milli\ampere})} \\ \midrule
 		-8 & -5.405 \\
 		-7 & -5.076 \\
 		-6 & -4.747 \\

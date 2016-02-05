@@ -14,3 +14,6 @@
 # Private files
 prelab*
 _*
+
+# Microsoft Office temp files
+~$*
