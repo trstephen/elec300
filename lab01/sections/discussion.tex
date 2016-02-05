@@ -1,15 +1,10 @@
 \section{Discussion}\label{sec:discussion}
 % vcvs
 \subsection{VCVS}
-\textit{1.3 Does the slope of the straight line agree with the value of K in \eqref{eq:vcvs}}
 
-Yes, the predicted value of 2 is reflected in the slope in Fig. \ref{fig:vcvs-graph} for $-4.2\si{\volt}<V_i<4.5\si{\volt}$.
+The predicted gain of $K=2$ in the voltage-controlled voltage source is reflected in the slope in Fig. \ref{fig:vcvs-graph} for $-4.2\si{\volt}<V_i<4.5\si{\volt}$. The op-amp experiences saturation at the lower limit sooner when compared to the upper limit. This is due to the internal circuitry of the op-amp; caused by inbalanced losses such as resistances and the voltage drop that occurs in transistors.
 
-Response is capped at expected values on positive side but is lower than expected on negative side. Why?
-
-\textit{1.3 Determine the internal resistance of the op amp}
-
-When we attempted to estimate the internal resistance using a 150\si{\ohm} load ($R_L$ in Fig. \ref{fig:schematics}\subref{fig:vcvs}), we were only receiving a drop in voltage of approximately 6\si{\micro\volt} (peak-to-peak), which implied an internal resistance of approximately 500\si{\micro\ohm}: this was considered to be incorrect. Replacing the 150\si{\ohm} load with a 47\si{\ohm} load, we experienced a more plausible result. With a load of 47\si{\ohm}, the voltage across the load was measured to be 788.5\si{\milli\volt}, which means the source has an estimated internal resistance of approximately 39.1\si{\ohm} (see~\eqref{eq:internal-resistance}).
+When we attempted to estimate the internal resistance using a 150\si{\ohm} load ($R_L$ in Fig. \ref{fig:schematics}\subref{fig:vcvs}), we were only receiving a drop in voltage of approximately 6\si{\micro\volt} (peak-to-peak), which implied an internal resistance of approximately 500\si{\micro\ohm}: this was considered to be incorrect. Replacing the 150\si{\ohm} load with a 47\si{\ohm} load, we experienced a more plausible result. With a load of 47\si{\ohm}, the voltage across the load was measured to be 788.5\si{\milli\volt}, which means the source has an estimated internal resistance of approximately 39.1\si{\ohm} (see~\eqref{eq:VCVS-resistance}).
 
 \begin{equation*}
 I_o	= \frac{V_o}{R_L} = \frac{0.7885\si{\volt}}{47\si{\ohm}} = 16\si{\milli\ampere}
@@ -18,25 +13,25 @@ I_o	= \frac{V_o}{R_L} = \frac{0.7885\si{\volt}}{47\si{\ohm}} = 16\si{\milli\ampe
 V_{internal}		= V_i - V_L = 1.4135\si{\volt} - 0.7885\si{\volt} = 625\si{\milli\volt}
 \end{equation*}
 \begin{equation}
-\label{eq:internal-resistance}
+\label{eq:VCVS-resistance}
 R_{internal}	= \frac{V_{internal}}{I_o} = \frac{625\si{\milli\volt}}{16\si{\milli\ampere}} = 39.1\si{\ohm}
 \end{equation}
 
 \subsection{VCCS}
-\textit{2.3 Compare the measured range of linear output to the expected range}
 
-Evaluating \eqref{eq:max-vccs} gives $-5\si{\volt} V_i < 5\si{\volt}$, whereas we observed a linear region between approximately $-4.0\si{\volt}<V_i<4.2\si{\volt}$. 
+Evaluating \eqref{eq:max-vccs} gives $-5\si{\volt} V_i < 5\si{\volt}$, whereas we observed a linear region between approximately $-4.0\si{\volt}<V_i<4.2\si{\volt}$.
 When the edge of the linear region was reached, rather than hard limiting the current experience soft limiting where $G$ dropped to \num{328e-6}.
-The asymmetric maxima are most likely the result of a mismatched input impedance.
-\SI{47}{\ohm} was used to compensate for $R_{internal}$, which differs from the expected value in \eqref{eq:internal-resistance}.
+The op-amp experiences saturation at the lower limit sooner when compared to the upper limit, again due to the internal circuitry of the op-amp.
+\SI{47}{\ohm} was used to compensate for $R_{internal}$, which differs from the expected value in \eqref{eq:VCVS-resistance}.
 
-\textit{2.4 What is the effect on $I_o$ when $R_L: \SI{1}{\kilo\ohm} \to \SI{0}{\ohm}$?}
 
-When shorting the output carrying 1\si{\milli\ampere} when measured under a 1\si{\kilo\ohm} load, the measured current dropped to 0.951\si{\milli\ampere}.
+When shorting the output carrying 1\si{\milli\ampere} when measured under a 1\si{\kilo\ohm} load, the measured current dropped to 0.951\si{\milli\ampere}. As the op-amp doesn't draw infinite current, there must be a non-zero internal resistance of the VCCS. When the op-amp drawing 1\si{\milli\ampere} across a 1\si{\kilo\ohm} load (with a subsequent 1.1828\si{\volt} across the load), is shorted, the resulting current is 0.951\si{milli\ampere}. Refering to \eqref{eq:VCCS-resistance}, the internal resistance of the source must be 1240\si{\ohm}.
 
-\large{\textit{Add a internal resistance calculation. Not sure how to do this eq'n.}}
+\begin{equation}
+	V_{internal} = \frac{V_o}{I_o} = \frac{1.1828\si{\volt}}{0.951\si{\milli\ampere}} = 1240\si{\ohm}
+	\label{eq:VCCS-resistance}
+\end{equation}
+
+
 
 Measuring the voltage between the inverting and non-inverting gives a reading of 0.97\si{\milli\volt}. In comparison to other voltages within the circuit and considering the immense input impedance, the current into each pin is indeed nearly non-existent and certainly negligible.
-
-\textit{2.5 Confirm the validity of the ideal op amp assumptions}
-We measured \[V^+ - V^1 = \SI{0.97}{\milli\volt}\], which is very close to the ideal op amp input difference of 0 V.
