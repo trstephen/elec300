@@ -1,7 +1,7 @@
 \section{Results}\label{sec:results}
-\begin{equation}
+\begin{equation*}
 	\tfmag = 20 \times \log \left( {V_y \over V_x} \right)
-\end{equation}
+\end{equation*}
 \begin{equation*}
 	\phi_{lag} = \phi_x - \phi_y
 \end{equation*}
@@ -10,19 +10,41 @@
 	\centering
 	\begin{tabular}{@{}SSSS@{}}
 		\toprule
-			\textcol{$f$ (Hz)} & 
+			\textcol{$f$ (kHz)} & 
 			\textcol{$V_y$ (V)} &
 			\textcol{$\tfmag$} &
 			\textcol{$\phi_{lag}$ (\si{\degree})} \\
 		\midrule
-		&  &  &  \\
-		&  &  &  \\ 
+			0.5  & 0.882 & -1.065  & -22.6 \\
+			1.0  & 0.708 & -2.973  & -38   \\
+			2.0  & 0.46  & -6.719  & -50.4 \\
+			3.0  & 0.337 & -9.421  & -53.4 \\
+			4.0  & 0.267 & -11.444 & -53   \\
+			5.0  & 0.224 & -12.969 & -51.1 \\
+			6.0  & 0.196 & -14.129 & -48.4 \\
+			7.0  & 0.178 & -14.966 & -45.6 \\
+			8.0  & 0.166 & -15.572 & -43   \\
+			9.0  & 0.156 & -16.111 & -41   \\
+			10.0 & 0.147 & -16.628 & -38   \\
+			11.0 & 0.141 & -16.990 & -36   \\
+			12.0 & 0.136 & -17.303 & -33   \\
 		\bottomrule
 	\end{tabular}
-	\caption{Response of Fig. \ref{fig:schematic} to frequency change ($V_x = \SI{5}{\volt}$)}
+	\caption{Response of Fig. \ref{fig:schematic} to frequency change ($V_x = \SI{1}{\volt}$)}
 	\label{table:data}
 \end{table}
 
-% graph of table data
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=0.95\linewidth]{graphics/phase_amp_graph}
+	\caption{Response of Fig. \ref{fig:schematic} to frequency change ($V_x = \SI{1}{\volt}$)}
+	\label{fig:graph}
+\end{figure}
 
-% screenshot of scope showing lag at diff input freqs
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=0.7\linewidth]{graphics/12khz_phase_lag}
+	\caption{$V_y(t)$ (top) lags $V_x(t)$ (bottom) by \SI{34.1}{\degree} at \SI{12}{\kilo\hertz}}
+	\label{fig:scope}
+\end{figure}
+
