@@ -17,3 +17,7 @@ _*
 
 # Microsoft Office temp files
 ~$*
+
+
+# Mac hidden files
+.DS_Store
