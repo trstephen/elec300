@@ -39,21 +39,20 @@
 \subsection{Analysis}
 
 Table~\ref{table:data} shows the response of the phase lag circuit to a range of frequencies, starting at 500\si{\hertz} then 1\si{\kilo\hertz} steps from 1\si{\kilo\hertz} to 12\si{\kilo\hertz}.
-Fig.~\ref{fig:response} shows a visual representation of the magnitude and phase shift of the output over the range of 500\si{\hertz} to 12\si{\kilo\hertz}.
-The measured frequency response shown in Fig.~\ref{fig:response} closely resembles the predicted, simulated response shown in Fig.~\ref{fig:response-sim}.
+Fig. \ref{fig:freq-response} shows the data from Table \ref{table:data} overlaying the ideal frequency response as predicted by \eqref{eq:tf-phaselag}.
 
-\begin{figure}[tbph]
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\linewidth]{graphics/response}
-	\caption{Response of Fig.~\ref{fig:schematic} to frequency change ($V_x = \SI{1}{\volt}$)}
-	\label{fig:response}
-\end{figure}
-
-\begin{figure}[tbph]
-	\centering
-	\includegraphics[width=0.8\linewidth]{graphics/response-sim}
-	\caption{Simulation of Fig.~\ref{fig:schematic}'s frequency response}
-	\label{fig:response-sim}
+	\subfigure[Magnitude response]
+	{
+		\includegraphics[width=0.8\linewidth]{graphics/mag}
+	}
+	\subfigure[Phase response]
+	{
+		\includegraphics[width=0.8\linewidth]{graphics/phase}
+	}
+	\label{fig:freq-response}
+	\caption{Experimental data overlaying the ideal response}
 \end{figure}
 
 The waveforms in Fig.~\ref{fig:scope}, show the phase offset of the 2 waveforms, visible by the offset in vertical cursors demonstrating a time shift.
@@ -64,5 +63,3 @@ The waveforms in Fig.~\ref{fig:scope}, show the phase offset of the 2 waveforms,
 	\caption{$V_y(t)$ (top) lags $V_x(t)$ (bottom) by \SI{34.1}{\degree} at \SI{12}{\kilo\hertz}}
 	\label{fig:scope}
 \end{figure}
-
-\clearpage
