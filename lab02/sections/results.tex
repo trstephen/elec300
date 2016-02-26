@@ -1,12 +1,6 @@
 \section{Results}\label{sec:results}
-\begin{equation*}
-	\tfmag = 20 \times \log \left( {V_y \over V_x} \right)
-\end{equation*}
-\begin{equation*}
-	\phi_{lag} = \phi_x - \phi_y
-\end{equation*}
-
-\subsection{Raw Measurements}
+The circuit from Fig. \ref{fig:schematic} was constructed using $R_1$ and $R_2$ as determined in Section \ref{sec:intro}.
+The voltages were recorded for 500 Hz to 12.5 kHz and are recorded in Table \ref{table:data}. 
 
 \begin{table}[htpb]
 	\centering
@@ -36,27 +30,14 @@
 	\label{table:data}
 \end{table}
 
-\subsection{Analysis}
-
-Table~\ref{table:data} shows the response of the phase lag circuit to a range of frequencies, starting at 500\si{\hertz} then 1\si{\kilo\hertz} steps from 1\si{\kilo\hertz} to 12\si{\kilo\hertz}.
-Fig. \ref{fig:freq-response} shows the data from Table \ref{table:data} overlaying the ideal frequency response as predicted by \eqref{eq:tf-phaselag}.
-
-\begin{figure}[htpb]
-	\centering
-	\subfigure[Magnitude response]
-	{
-		\includegraphics[width=0.8\linewidth]{graphics/mag}
-		\label{subfig:mag-response}
-	}
-	\subfigure[Phase response]
-	{
-		\includegraphics[width=0.8\linewidth]{graphics/phase}
-		\label{subfig:phase-response}
-	}
-	\caption{Experimental data overlaying the ideal response}
-	\label{fig:freq-response}
-\end{figure}
-
+The magnitude of the frequency response is given by:
+\begin{equation*}
+\tfmag = 20 \times \log \left( {V_y \over V_x} \right).
+\end{equation*}
+The phase response is given by:
+\begin{equation*}
+\phi_{lag} = \phi_x - \phi_y.
+\end{equation*}
 The waveforms in Fig.~\ref{fig:scope}, show the phase offset of the 2 waveforms, visible by the offset in vertical cursors demonstrating a time shift.
 
 \begin{figure}[tbph]
@@ -64,4 +45,24 @@ The waveforms in Fig.~\ref{fig:scope}, show the phase offset of the 2 waveforms,
 	\includegraphics[width=0.65\linewidth]{graphics/12khz_phase_lag}
 	\caption{$V_y(t)$ (top) lags $V_x(t)$ (bottom) by \SI{34.1}{\degree} at \SI{12}{\kilo\hertz}}
 	\label{fig:scope}
+\end{figure}
+
+\subsection{Analysis}
+
+Fig. \ref{fig:freq-response} shows the data from Table \ref{table:data} overlaying the ideal frequency response as predicted by \eqref{eq:tf-phaselag}.
+
+\begin{figure}[htpb]
+	\centering
+	\subfigure[Magnitude response]
+	{
+		\includegraphics[width=0.475\linewidth]{graphics/mag}
+		\label{subfig:mag-response}
+	}
+	\subfigure[Phase response]
+	{
+		\includegraphics[width=0.475\linewidth]{graphics/phase}
+		\label{subfig:phase-response}
+	}
+	\caption{Experimental data overlaying the ideal response}
+	\label{fig:freq-response}
 \end{figure}
