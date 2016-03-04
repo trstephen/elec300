@@ -1,0 +1,117 @@
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+%				    	SETUP
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+%----------------------------------------------------------------------------
+%			  	   PACKAGES
+%----------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% 	  Packages
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Fonts and Symbols
+%% --------------------------
+\usepackage{
+	amsmath,			% math operators
+	amssymb,			% math symbols
+	courier,			% better tt font for listings
+	soul,				% strike through with \st{}
+	url,				% embed urls in text
+	xcolor,				% color!
+%	xfrac,				% fancy fractions
+}
+
+% preserve default font for URLs
+\renewcommand*{\UrlFont}{\rmfamily}		
+
+%% Graphics
+%% --------------------
+\usepackage{
+	graphicx,			% allows insertion of images
+	subfigure,			% allows subfigures (a), (b), etc.
+}				
+\graphicspath{ {graphics/} }	% (graphicx) relative path to graphics folder				
+
+%% Tables
+%% --------------------------
+\usepackage{
+	booktabs,			% better tables, discourages vertical rulings
+	multicol,			% allow multi columns
+}
+
+%% Layout Alteration
+%% --------------------------
+\usepackage{			
+%	caption,			% line breaks in captions with \\
+%	changepage,			% change margins for PARTS of pages with (adjustwidth)
+	geometry,			% change the margins for specific PAGES
+	parskip,			% disable indents
+	rotating,			% sideways figures
+	setspace,			% single, double spacing
+}
+\geometry{				% specify page size options for (geometry)
+	a4paper, 			% paper size
+	hmargin=1in,		% horizontal margins
+	vmargin=1in,		% vertical margins
+}	
+
+
+%% Units
+%% --------------------------
+\usepackage{
+	siunitx,			% has S (decimal align) column type
+}
+\sisetup{input-symbols = {()},  % do not treat "(" and ")" in any special way
+	group-digits  = false, 	% no grouping of digits
+%	load-configurations = abbreviations,
+%	per-mode = symbol,
+}
+
+%% Misc
+%% --------------------------
+\usepackage{
+	enumitem,			% better control of enumerations, descriptions, etc
+%	pdfpages,			% include external pdfs
+}
+
+%% References
+%% --------------------------
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{ELEC300_Lab_03.bib}
+
+%----------------------------------------------------------------------------
+%		     MACROS AND COMMANDS
+%----------------------------------------------------------------------------
+
+% Defines a new command for the horizontal lines, change thickness here
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+% override S column type with centered text column
+\newcommand{\textcol}[1]{\multicolumn{1}{c}{#1}}
+
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+%				   DOCUMENT
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+\begin{document}
+
+\doublespacing
+\input{sections/titlepage}
+\input{sections/objective}
+\input{sections/intro}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+\newpage
+\printbibliography[heading=bibintoc,title={References}]
+
+\end{document}
