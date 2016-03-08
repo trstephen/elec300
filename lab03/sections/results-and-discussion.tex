@@ -20,3 +20,16 @@ The large overshoot corresponds to significant underdamping, which is consistent
 The measured values are $O_v = \SI{2.225}{\volt}$ and $T_p = \SI{460}{\micro\second}$.
 As the transient response is damped, the value of the output settles to \SI{2.8}{\volt}.
 This is consistent with $G = 1.8$.
+
+Using equation \eqref{eqn:overshoot} and Fig.~\ref{fig:overshoot}, Zeta could be solved for. 
+\begin{equation}\label{eqn:solveforzeta}
+	{\ln(O_v) \over \pi} = {\zeta \over \sqrt{1 - \zeta^2}}
+\end{equation}
+The experimentally determined value of $\zeta$ was found to be $\zeta = 0.2467$.
+Next, $\omega_0$ was solved for by rearranging \eqref{eqn:period}.
+\begin{equation}\label{eqn:solveforomega}
+	\omega_0 = { \pi \over T_p\beta }.
+\end{equation} 
+Solving equation \eqref{eqn:solveforomega} gives an angular velocity of $\omega_0 = 7048$.
+
+Using the determined values for \zeta and \omega_0, a simulated time domain response was generated in matlab.
