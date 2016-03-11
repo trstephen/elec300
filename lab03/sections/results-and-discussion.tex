@@ -25,11 +25,23 @@ Using equation \eqref{eqn:overshoot} and Fig.~\ref{fig:overshoot}, Zeta could be
 \begin{equation}\label{eqn:solveforzeta}
 	{\ln(O_v) \over \pi} = {\zeta \over \sqrt{1 - \zeta^2}}
 \end{equation}
-The experimentally determined value of $\zeta$ was found to be $\zeta = 0.2467$.
+The experimentally determined value of $\zeta$ was found to be $\zeta = 0.07$.
 Next, $\omega_0$ was solved for by rearranging \eqref{eqn:period}.
 \begin{equation}\label{eqn:solveforomega}
-	\omega_0 = { \pi \over T_p\beta }.
+	\omega_0 = { \pi \over T_p\beta }
 \end{equation} 
-Solving equation \eqref{eqn:solveforomega} gives an angular velocity of $\omega_0 = 7048$.
+Solving equation \eqref{eqn:solveforomega} gives an angular velocity of $\omega_0 = 6845$.
 
-Using the determined values for $\zeta$ and $\omega_0$, a simulated time domain response was generated in matlab.
+Using the determined values for $\zeta$ and $\omega_0$, several simulated time domain response points were generated using equation 3.12a in the lab manual. The equation and resulting figure can be seen below.
+
+\begin{equation}\label{eqn:timedomainresponse}
+a(t) = {G(1-{1 \over \beta}exp(-t\zeta\omega_0)sin(t\omega_0\beta + \theta))}
+\end{equation} 
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{graphics/overshoot_simulated}
+	\caption{Some simulated time domain response values over the measured response of the second order system}
+	\label{fig:overshoot_sim}
+\end{figure}
