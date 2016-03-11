@@ -27,15 +27,15 @@
 }
 
 % preserve default font for URLs
-\renewcommand*{\UrlFont}{\rmfamily}		
+\renewcommand*{\UrlFont}{\rmfamily}
 
 %% Graphics
 %% --------------------
 \usepackage{
 	graphicx,			% allows insertion of images
 	subfigure,			% allows subfigures (a), (b), etc.
-}				
-\graphicspath{ {graphics/} }	% (graphicx) relative path to graphics folder				
+}
+\graphicspath{ {graphics/} }	% (graphicx) relative path to graphics folder
 
 %% Tables
 %% --------------------------
@@ -46,7 +46,7 @@
 
 %% Layout Alteration
 %% --------------------------
-\usepackage{			
+\usepackage{
 %	caption,			% line breaks in captions with \\
 %	changepage,			% change margins for PARTS of pages with (adjustwidth)
 	geometry,			% change the margins for specific PAGES
@@ -58,7 +58,7 @@
 	a4paper, 			% paper size
 	hmargin=1in,		% horizontal margins
 	vmargin=1in,		% vertical margins
-}	
+}
 
 
 %% Units
@@ -66,8 +66,12 @@
 \usepackage{
 	siunitx,			% has S (decimal align) column type
 }
+% Include peak-to-peak voltage unit
+\DeclareSIUnit[]\voltpp
+{V_{pp}}
+
 \sisetup{input-symbols = {()},  % do not treat "(" and ")" in any special way
-	group-digits  = false, 	% no grouping of digits
+group-digits  = false, 	% no grouping of digits
 %	load-configurations = abbreviations,
 %	per-mode = symbol,
 }
@@ -89,7 +93,7 @@
 %----------------------------------------------------------------------------
 
 % Defines a new command for the horizontal lines, change thickness here
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 % override S column type with centered text column
 \newcommand{\textcol}[1]{\multicolumn{1}{c}{#1}}
