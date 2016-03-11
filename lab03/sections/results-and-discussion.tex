@@ -2,7 +2,7 @@
 Fig.~\ref{fig:schematic} was realized with damping factor $\zeta = 0.1$.
 Using \eqref{eqn:damping}, $R_a = \SI{70.2}{\kilo\ohm}$.
 The opamp supply power was set at \SI{+-15}{\volt}.
-An input signal of 0.1\si{\voltpp} at \SI{50}{\hertz} square wave was applied to the circuit.
+An input signal of 1~\si{\voltpp} at \SI{50}{\hertz} square wave was applied to the circuit.
 One pulse of the square wave will behave locally like a unit step function.
 
 The output of this circuit is shown in Fig.~\ref{fig:overshoot}.
@@ -17,9 +17,9 @@ The large overshoot corresponds to significant underdamping, which is consistent
 	\label{fig:overshoot}
 \end{figure}
 
-The measured values are $O_v = \SI{2.225}{\volt}$ and $T_p = \SI{460}{\micro\second}$.
+The measured values are $O_v = {\SI{2.225}{\volt} \over \SI{2.8}{\volt}} = 0.7946$ and $T_p = \SI{460}{\micro\second}$.
 As the transient response is damped, the value of the output settles to \SI{2.8}{\volt}.
-This is consistent with $G = 1.8$.
+This is consistent with $G = 2.8$ for an input of \SI{1}{\volt}.
 
 Using equation \eqref{eqn:overshoot} and Fig.~\ref{fig:overshoot}, Zeta could be solved for. 
 \begin{equation}\label{eqn:solveforzeta}
@@ -30,14 +30,14 @@ Next, $\omega_0$ was solved for by rearranging \eqref{eqn:period}.
 \begin{equation}\label{eqn:solveforomega}
 	\omega_0 = { \pi \over T_p\beta }
 \end{equation} 
-Solving equation \eqref{eqn:solveforomega} gives an angular velocity of $\omega_0 = 6845$.
+Solving equation \eqref{eqn:solveforomega} gives an angular velocity of $\omega_0 = 6845~\si{\radian\per\second}$.
 
+\pagebreak
 Using the determined values for $\zeta$ and $\omega_0$, several simulated time domain response points were generated using equation 3.12a in the lab manual. The equation and resulting figure can be seen below.
 
 \begin{equation}\label{eqn:timedomainresponse}
 a(t) = {G(1-{1 \over \beta}exp(-t\zeta\omega_0)sin(t\omega_0\beta + \theta))}
 \end{equation} 
-
 
 \begin{figure}
 	\centering
