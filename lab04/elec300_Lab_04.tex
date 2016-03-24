@@ -20,6 +20,7 @@
 	amsmath,			% math operators
 	amssymb,			% math symbols
 	courier,			% better tt font for listings
+	mathrsfs,			% script letters for Fourier, Laplace; \mathscr{X}
 	soul,				% strike through with \st{}
 	url,				% embed urls in text
 	xcolor,				% color!
@@ -96,6 +97,8 @@
 % override S column type with centered text column
 \newcommand{\textcol}[1]{\multicolumn{1}{c}{#1}}
 
+% Laplace transform symbol
+\newcommand{\LT}{\ensuremath{\mathscr{L}}}
 
 %----------------------------------------------------------------------------
 %----------------------------------------------------------------------------
