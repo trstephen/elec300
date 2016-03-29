@@ -1,2 +1,14 @@
 \section{Discussion}\label{sec:discussion}
-Analysis and interpretation of data.
+We confirmed frequency analysis through the Laplace transform is a valid and efficient way to analyze the response of a circuit in the time domain.
+
+The output of the inverter circuit in Fig.~\ref{fig:inverter} is of equal amplitude to the input waveform but has a gain of approximately -1. The expected gain of the circuit is 
+\begin{equation*}
+	\text{Gain} = -\frac{R}{R_1} = -1
+\end{equation*}
+This is the expected behaviour of an inverter circuit.
+
+Visible in Fig.~\ref{fig:inverter}, the output of the adder circuit is of the same phase as the input signal however the output signal is the result of adding the input signal to itself, resulting in the output being the input scaled by a factor of 2. This deviates from the experimental procedure of add a DC offset to the input sinusoid, however adding the input to itself confirms the adder circuit functions correctly when both inputs are time varying, or AC signals.
+
+The output of the integrator circuit in Fig.~\ref{fig:integrator} is the result of removing a short across the feedback capacitor, which acts as the integrating element. This ensures the integrator has an initial value of 0, and climbs to the op-amps saturation voltage of 15\si{\volt} when a DC input of approximately -0.1\si{\volt} is provided.
+
+The final circuit, which is a first order system, demonstrates the expected response of such a system to a unit-step input: that is, the system approaches the input signal according to a time-decaying inverse exponential, which is visible in Fig.~\ref{fig:first-order}.
