@@ -1,57 +1,60 @@
-\setkeys{Gin}{width=0.7\textwidth}
 \section{Results}\label{sec:results}
 Four circuits were assembled and analyzed using a function generator to apply a stimulus sinusoid of 1\si{\voltpp} at 1\si{\kilo\hertz}, and an oscilloscope to measure the output of the system. Circuit schematics are taken from the lab manual \cite{lab-manual}.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics{schematic-inverter}
-	\label{fig:schem-inverter}
-	\caption{Inverter circuit schematic: $R_1=R=10\si{\kilo\ohm}$}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-	\includegraphics{response-inverter}
+	\subfigure[$R_1=R=\SI{10}{\kilo\ohm}$]
+	{
+		\includegraphics[width=0.475\linewidth]{schematic-inverter}
+	}
+	\subfigure[$V_o$, top; $V_i$, bottom]
+	{
+		\includegraphics[width=0.475\linewidth]{response-inverter}
+	}
 	\label{fig:inverter}
-	\caption{Input and output of inverter circuit}
+	\caption{Inverter}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics{schematic-adder}
-	\label{fig:schem-adder}
-	\caption{Adder circuit schematic: $R=R_1=R_2=10\si{\kilo\ohm}$}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-	\includegraphics{response-adder}
+	\subfigure[$R=R_1=R_2=\SI{10}{\kilo\ohm}$]
+	{
+		\includegraphics[width=0.475\linewidth]{schematic-adder}
+	}
+	\subfigure[$V_o$, top; $V_i$, bottom]
+	{
+		\includegraphics[width=0.475\linewidth]{response-adder}
+	}
 	\label{fig:adder}
-	\caption{Input and output of adder circuit}
+	\caption{Adder}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics{schematic-integrator}
-	\label{fig:schem-integrator}
-	\caption{Integrator circuit schematic: $C=16\si{\nano\farad}$, $R_1=10\si{\kilo\ohm}$}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-	\includegraphics{response-integrator}
+	\subfigure[$C=\SI{16}{\nano\farad}$, $R_1=\SI{10}{\kilo\ohm}$]
+	{
+		\includegraphics[width=0.475\linewidth]{schematic-integrator}
+	}
+	\subfigure[Rising edge of $V_o$]
+	{
+		\includegraphics[width=0.475\linewidth]{response-integrator}
+	}
 	\label{fig:integrator}
-	\caption{Input and output of integrator circuit}
+	\caption{Integrator}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics{schematic-first-order}
-	\label{fig:schem-first-order}
-	\caption{First order circuit schematic: $C=16\si{\nano\farad}$, $R_1=R_2=10\si{\kilo\ohm}$}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics{response-first-order}
+	\subfigure[$C=\SI{16}{\nano\farad}$, $R_1=R_2=\SI{10}{\kilo\ohm}$]
+	{
+		\includegraphics[width=0.475\linewidth]{schematic-first-order}
+	}
+	\subfigure[$V_i$, top; $V_o$, bottom]
+	{
+		\includegraphics[width=0.475\linewidth]{response-first-order}
+	}
 	\label{fig:first-order}
-	\caption{Input and output of first order system with an integrator}
+	\caption{Integrator as a first order system with feedback}
 \end{figure}
 
 \clearpage
